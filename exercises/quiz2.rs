@@ -34,7 +34,7 @@ mod my_module {
     // TODO: Complete the function signature!
     pub fn transformer(input: ???) -> ??? {
         // TODO: Complete the output declaration!
-        let mut output: ??? = vec![];
+        let mut output: vec = vec![];
         for (string, command) in input.iter() {
             // TODO: Complete the function body. You can do it!
         }
