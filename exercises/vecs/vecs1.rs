@@ -21,5 +21,6 @@ mod tests {
     fn test_array_and_vec_similarity() {
         let (a, v) = array_and_vec();
         assert_eq!(a, v[..]);
+        
     }
 }

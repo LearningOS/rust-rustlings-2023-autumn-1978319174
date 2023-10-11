@@ -4,16 +4,20 @@
 //
 // Execute `rustlings hint lifetimes3` or use the `hint` watch subcommand for a
 // hint.
-
-struct Book<'a> {
+struct Book<'a, 'b> {
     author: &'a str,
-    title: &'a str,
+    title: &'b str,
 }
 
 fn main() {
     let name = String::from("Jill Smith");
-    let title = String::from("Fish Flying");
-    let book = Book { author: &name, title: &title };
+    let m;
+    {
+        let title = String::from("Fish Flying");
+        let book = Book { author: &name, title: &title };
+        m = book.author;
+    }
 
-    println!("{} by {}", book.title, book.author);
+    println!("{}", m);
+    // println!("{} by {}", name, title);
 }
