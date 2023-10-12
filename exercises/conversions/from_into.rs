@@ -44,6 +44,10 @@ impl Default for Person {
 
 impl From<&str> for Person {
     fn from(s: &str) -> Person {
+        let (name, age) = match s.split_once(',') {
+            Some(_) => (name.trim(), age.trim),
+            None => return Person::default(),
+        };
     }
 }
 
